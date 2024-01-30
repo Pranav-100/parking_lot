@@ -27,9 +27,6 @@ class ParkingLotImpl implements ParkingLot {
         return registrationToSlot;
     }
 
-    public void setRegistrationToSlot(HashMap<String, Integer> registrationToSlot) {
-        this.registrationToSlot = registrationToSlot;
-    }
 
     public HashMap<String, String> getRegistrationToColor() {
         return registrationToColor;
@@ -43,9 +40,6 @@ class ParkingLotImpl implements ParkingLot {
         return availableSlots;
     }
 
-    public void setAvailableSlots(TreeSet<Integer> availableSlots) {
-        this.availableSlots = availableSlots;
-    }
 
     // Allocating the slots
     ParkingLotImpl(int capacity) {
@@ -106,7 +100,7 @@ class ParkingLotImpl implements ParkingLot {
     /**
      * Retrieves the Registration numbers of all slots where cars of a particular color are parked.
      */
-    public void numberWithColor(String color) {
+    public String numberWithColor(String color) {
         ArrayList<String>number=new ArrayList<>();
         for(Map.Entry<String,String>map:registrationToColor.entrySet()){
             if(Objects.equals(map.getValue(), color)) {
@@ -116,6 +110,7 @@ class ParkingLotImpl implements ParkingLot {
         }
         String str=String.join(", ",number);
         System.out.println(str);
+        return str;
     }
 
 

@@ -32,26 +32,12 @@ public class MainTest {
         parkingLotImpl.status();
     }
 
-//    @Test
-//    public void testGetRegistrationNumbersForColor() {
-//        ParkingLotImpl parkingLotImpl = new ParkingLotImpl(5);
-//        parkingLotImpl.park("KA-01-HH-1234", "White");
-//        parkingLotImpl.park("KA-01-HH-9999", "White");
-//        assertEquals("KA-01-HH-1234, KA-01-HH-9999", parkingLotImpl.getRegistrationToColor("White"));
-//    }
+    @Test
+    public void testGetRegistrationNumbersForColor() {
+        ParkingLotImpl parkingLotImpl = new ParkingLotImpl(5);
+        parkingLotImpl.park("KA-01-HH-1234", "White");
+        parkingLotImpl.park("KA-01-HH-9999", "White");
+        assertEquals("KA-01-HH-1234, KA-01-HH-9999", parkingLotImpl.numberWithColor("White"));
+    }
 
-//    @Test
-//    public void testGetSlotNumbersForColor() {
-//        ParkingLotImpl parkingLotImpl = new ParkingLotImpl(5);
-//        parkingLotImpl.park("KA-01-HH-1234", "White");
-//        parkingLotImpl.park("KA-01-HH-9999", "White");
-//        assertEquals("1, 2", parkingLotImpl.getSlotNumbersForColor("White"));
-//    }
-
-//    @Test
-//    public void testGetSlotNumberForRegistration() {
-//        ParkingLotImpl parkingLotImpl = new ParkingLotImpl(5);
-//        parkingLotImpl.park("KA-01-HH-1234", "White");
-//        assertEquals(1, parkingLotImpl.getSlotNumberForRegistration("KA-01-HH-1234"));
-//    }
 }
