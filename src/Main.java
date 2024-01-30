@@ -1,16 +1,14 @@
 import java.io.*;
 import java.util.*;
-
 public class Main {
-    private static  ParkingLotImpl parkingLotImpl=null;
+    private ParkingLotImpl parkingLotImpl=null;
     public static void main(String[] args) {
+        Main obj=new Main();
         if (args.length == 0) {
-            // Interactive mode
-            userInteractive();
+            obj.userInteractive(); // Interactive mode
         } else if (args.length == 1) {
-            // File mode
             String filename = args[0];
-            fileMode(filename);
+            obj.fileMode(filename);  // File mode
         } else {
             System.out.println("Usage:");
             System.out.println("Interactive mode: java Main");
@@ -18,7 +16,8 @@ public class Main {
         }
     }
 
-    private static void userInteractive() {
+    //User Interactive mode used when Commands are give on cmd
+    private void userInteractive() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             String command = scanner.nextLine();
@@ -30,7 +29,8 @@ public class Main {
         scanner.close();
     }
 
-    private static void fileMode(String filename) {
+    // File mode used when file path is give on cmd
+    private void fileMode(String filename) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
             String line;
@@ -44,7 +44,8 @@ public class Main {
         userInteractive();
     }
 
-    private static void processCommand(String command) {
+    // It is used to process command which is user Interactive or File mode
+    private void processCommand(String command) {
         String[] parts = command.split(" ");
         switch (parts[0]) {
             case "create_parking_lot":

@@ -1,3 +1,6 @@
+/**
+ * Interface representing a parking lot.
+ */
 public interface ParkingLot {
     public void park(String registrationNumber, String color);
     public void leave(int slot);
